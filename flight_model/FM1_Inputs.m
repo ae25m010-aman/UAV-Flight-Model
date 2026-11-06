@@ -1,0 +1,103 @@
+function in=FM1_Inputs()
+in.h_cruise=1000*0.3048;
+in.V_cruise=18;
+in.t_cruise=2700/18;
+in.t_loiter=380;
+in.ROC_climb=2.5;
+in.V_climb=18;
+in.V_airborne=18;
+in.K_air=1;
+in.ROC_air_max=6;
+in.ROC_slew=1.5;
+in.k_loiter_ideal=(1/3)^(1/4);
+in.k_stall_margin=1.2;
+in.loiter_floor=true;
+in.bank_loiter_deg=15;
+in.k_descent=0.7;
+in.V_descent=18;
+in.drop_payload=false;
+in.mu_roll=0.03;
+in.mu_landing=0.05;
+in.alpha_roll_deg=3;
+in.k_liftoff=1.2;
+in.k_approach=1.3;
+in.k_touchdown=1.15;
+in.gamma_app_deg=3;
+in.h_screen=15;
+in.n_flare=1.2;
+in.use_ground_effect=true;
+in.a_max=1;
+in.tau_V=3;
+in.batt.N_cells=6;
+in.batt.Q_Ah=4.2;
+in.batt.I_cont=168;
+in.batt.R_pack=0.02;
+in.batt.SoC_min=0.2;
+in.batt.SoC_tab=[0 0.05 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1];
+in.batt.OCV_tab=[3.27 3.5 3.6 3.7 3.75 3.79 3.82 3.87 3.92 4 4.08 4.2];
+in.mot.KV=650;
+in.mot.I0=1.55;
+in.mot.I_max=55;
+in.mot.P_max=1150;
+in.mot.R_m=0.072;
+in.esc.I_max=100;
+in.esc.eta=0.96;
+in.esc.R_wire=0.005;
+in.esc.d_max=0.98;
+in.prop.D=13*0.0254;
+in.prop.RPM_max=190000/13;
+in.prop.k_T=0.9;
+in.prop.k_P=1;
+in.prop.RPM=[6000 8000 10000 12000];
+in.prop.J=(0:29)*0.02222;
+in.prop.CT=[ ...
+.0904 .0889 .0874 .0857 .0839 .0819 .0799 .0776 .0753 .0728 .0702 .0674 .0645 .0614 .0582 .0548 .0513 .0477 .044 .0401 .0362 .0323 .0282 .0242 .0201 .016 .0119 .0079 .0039 0; ...
+.0913 .0898 .0883 .0866 .0847 .0828 .0807 .0785 .0761 .0736 .0709 .0681 .0652 .0621 .0588 .0554 .0519 .0482 .0444 .0405 .0366 .0326 .0285 .0244 .0202 .0161 .012 .0079 .0038 -.0001; ...
+.0925 .091 .0895 .0877 .0859 .084 .0819 .0796 .0772 .0747 .072 .0692 .0662 .063 .0597 .0563 .0527 .049 .0451 .0412 .0372 .0331 .029 .0248 .0206 .0164 .0122 .008 .0039 -.0001; ...
+.0941 .0926 .091 .0893 .0875 .0855 .0834 .0811 .0787 .0762 .0735 .0706 .0675 .0643 .061 .0575 .0538 .0501 .0462 .0422 .0381 .0339 .0297 .0254 .0211 .0168 .0125 .0083 .0041 0];
+in.prop.CP=[ ...
+.0306 .0309 .0312 .0315 .0317 .0319 .032 .0321 .032 .0319 .0317 .0314 .031 .0305 .0299 .0292 .0283 .0273 .0262 .025 .0237 .0222 .0207 .019 .0173 .0155 .0135 .0115 .0095 .0074; ...
+.0303 .0306 .031 .0312 .0315 .0316 .0318 .0318 .0318 .0317 .0315 .0312 .0308 .0303 .0296 .0289 .028 .027 .0258 .0246 .0232 .0217 .0201 .0184 .0166 .0147 .0128 .0107 .0086 .0064; ...
+.0304 .0307 .031 .0313 .0316 .0318 .0319 .0319 .0319 .0318 .0316 .0313 .0309 .0303 .0297 .0289 .028 .0269 .0258 .0245 .0231 .0216 .0199 .0182 .0163 .0144 .0123 .0102 .008 .0058; ...
+.0308 .0311 .0314 .0317 .032 .0322 .0323 .0324 .0323 .0322 .032 .0317 .0313 .0307 .03 .0292 .0283 .0272 .026 .0247 .0232 .0216 .02 .0181 .0162 .0142 .0121 .0099 .0077 .0054];
+in.av.P_FC=2.5;
+in.av.P_GPS=0.5;
+in.av.P_RX=0.5;
+in.av.P_telem=1.5;
+in.av.P_camera=1.5;
+in.av.P_video=3;
+in.av.eta_BEC=0.85;
+in.av.V=6;
+in.av.I_idle=0.01;
+in.av.I_run=0.17;
+in.av.I_maxload=1.2;
+in.av.tau_stall=11;
+in.av.tau_each=[7.5 7.5 2.5 2.5 5];
+in.av.load_frac=0.3;
+in.av.duty.takeoff=0.4;
+in.av.duty.climb=0.2;
+in.av.duty.cruise=0.15;
+in.av.duty.loiter=0.25;
+in.av.duty.descent=0.2;
+in.av.duty.landing=0.5;
+in.vn.n_pos=[];
+in.vn.n_neg=-0.5;
+in.vn.CL_max_neg=-0.8;
+in.vn.k_dive=1.6;
+in.vn.show_gust=true;
+in.vn.U_gust_C=15.24;
+in.vn.U_gust_D=7.62;
+in.out.base_dir='';
+in.out.folder='FM1_Results';
+in.out.list_name='FM1_Figure_List.txt';
+in.out.dpi=200;
+in.out.keep_open=true;
+in.out.make_video=true;
+in.out.video_fps=20;
+in.out.video_quality=95;
+in.out.video_sec=[ 8 6 10 8 20 8 12 8 8 ];
+in.out.cam_xyz=[];
+in.out.uav_frame_share=0.16;
+in.dt_ground=0.05;
+in.dt_air=0.5;
+end

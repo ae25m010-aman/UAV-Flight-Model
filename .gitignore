@@ -1,0 +1,12 @@
+FM1_Results/
+FM2_Results/
+FM3_Results/
+wing_figures/
+Fuselage_Figures/
+figures/
+wing_design_output.txt
+*.avi
+*.mp4
+*.zip
+*.asv
+*.mat
